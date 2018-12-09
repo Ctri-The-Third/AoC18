@@ -1,3 +1,9 @@
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.csprojAssemblyReference.cache
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.csproj.CoreCompileInputs.cache
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.RazorAssemblyInfo.cache
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.RazorAssemblyInfo.cs
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.AssemblyInfoInputs.cache
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.AssemblyInfo.cs
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netcoreapp2.1\AoC18.deps.json
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netcoreapp2.1\AoC18.runtimeconfig.json
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netcoreapp2.1\AoC18.runtimeconfig.dev.json
@@ -5,16 +11,11 @@ C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debu
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netcoreapp2.1\AoC18.pdb
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netcoreapp2.1\AoC18.Views.dll
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netcoreapp2.1\AoC18.Views.pdb
-C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.csprojAssemblyReference.cache
-C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.csproj.CoreCompileInputs.cache
-C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.RazorAssemblyInfo.cache
-C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.RazorAssemblyInfo.cs
-C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.AssemblyInfoInputs.cache
-C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.AssemblyInfo.cs
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.TagHelpers.input.cache
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.TagHelpers.output.cache
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.RazorCoreGenerate.cache
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\Day1.g.cshtml.cs
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\Day2.g.cshtml.cs
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\Index.g.cshtml.cs
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs

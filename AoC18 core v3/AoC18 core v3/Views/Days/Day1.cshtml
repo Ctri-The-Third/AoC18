@@ -6,14 +6,19 @@
 
 <h2>Day1</h2>
 <div style="width:100%;">
-    <div style="width:50%; border:2px solid black; float:left;" id="problem">
-        @ViewData["Problem"].ToString();
+    <form action="Day1\" method="post">
+        <input type ="submit" />
+        
+        <div style="width:50%; border:2px solid black; float:left;" id="problem">
+            <textarea name="problem" rows="1000" cols="50">@ViewData["Problem"].ToString()</textarea>
 
-    </div>
-    <div style=" width:50%;border:2px solid black; float:left;" id="solution">
-        @ViewData["Solution"].ToString();
+        </div>
+        <div style=" width:50%;border:2px solid black; float:left;" id="solution">
+            Final frequency = [@ViewData["Final frequency"].ToString()]<br />
+            First duplicate frequency = [@ViewData["Duplicate frequency"].ToString()]
 
 
-    </div>
+        </div>
+    </form>
 </div>
 

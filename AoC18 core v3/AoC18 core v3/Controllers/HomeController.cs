@@ -12,7 +12,8 @@ namespace AoC18_core_v3.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("day2", "days");
+            //return View();
         }
 
         public IActionResult About()

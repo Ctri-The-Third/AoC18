@@ -45,6 +45,8 @@ namespace AoC18_core_v3.Controllers
             ViewData["matchingChars"] = Day2Code.Day2.matchingcharacters;
             return View();
         }
+        
+
         public IActionResult Day2()
         {
             return Day2(Day2Code.Day2.defaultproblem);
@@ -52,14 +54,37 @@ namespace AoC18_core_v3.Controllers
         [HttpPost]
         public IActionResult Day3(String problem)
         {
-           
-            
-          
             return View();
         }
         public IActionResult Day3()
         {
             return Day3(Day2Code.Day2.defaultproblem);
         }
+
+        public IActionResult Day4()
+        {
+            return View("placeholder");
+        }
+        public IActionResult Day5()
+        {
+            return View("placeholder");
+        }
+        public IActionResult Day6()
+        {
+            return View("placeholder");
+        }
+        public IActionResult Day7()
+        {
+            return View("placeholder");
+        }
+        public IActionResult Day8()
+        {
+            return View("placeholder");
+        }
+        public IActionResult Day9()
+        {
+            return View("placeholder");
+        }
+        
     }
 }

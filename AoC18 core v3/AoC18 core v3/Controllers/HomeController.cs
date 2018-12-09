@@ -12,28 +12,25 @@ namespace AoC18_core_v3.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("day2", "days");
+            return RedirectToAction("index", "days");
             //return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+
+            
+
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return Redirect("https://www.ctri.co.uk/");
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

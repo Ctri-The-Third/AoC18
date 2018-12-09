@@ -11,6 +11,31 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+img.starimg
+{
+    width:32px;
+    height:32px;
+}
+.day-link, .day-link:hover, .day-link:visited, .day-link:link, .day-link:active{
+    color: #333;
+    text-decoration: none;
+    
+}
+
+
+    div.day-text{
+        
+    }
+    div.day-box {
+        position: relative;
+        min-height: 150px;
+        padding-right: 15px;
+        padding-left: 15px;
+        
+        float: left;
+        color:#333;
+        width:225px;
+    }
 
 /* Carousel */
 .carousel-caption p {

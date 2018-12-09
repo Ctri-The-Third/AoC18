@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Content Include="Day1Code\Day1.cs" />
+    <Content Include="DayXCode\Day3.cs" />
   </ItemGroup>
 
   <ItemGroup>

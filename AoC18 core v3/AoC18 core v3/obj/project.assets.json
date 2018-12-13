@@ -12530,23 +12530,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\petergoudie\\.nuget\\packages\\": {},
+    "C:\\Users\\C'tri\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\petergoudie\\Documents\\GitHub\\AoC18\\AoC18 core v3\\AoC18 core v3\\AoC18.csproj",
+      "projectUniqueName": "C:\\Users\\C'tri\\Documents\\GitHub\\AoC18\\AoC18 core v3\\AoC18 core v3\\AoC18.csproj",
       "projectName": "AoC18",
-      "projectPath": "C:\\Users\\petergoudie\\Documents\\GitHub\\AoC18\\AoC18 core v3\\AoC18 core v3\\AoC18.csproj",
-      "packagesPath": "C:\\Users\\petergoudie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\petergoudie\\Documents\\GitHub\\AoC18\\AoC18 core v3\\AoC18 core v3\\obj\\",
+      "projectPath": "C:\\Users\\C'tri\\Documents\\GitHub\\AoC18\\AoC18 core v3\\AoC18 core v3\\AoC18.csproj",
+      "packagesPath": "C:\\Users\\C'tri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\C'tri\\Documents\\GitHub\\AoC18\\AoC18 core v3\\AoC18 core v3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\petergoudie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\C'tri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

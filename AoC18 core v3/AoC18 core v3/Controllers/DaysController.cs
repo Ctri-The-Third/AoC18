@@ -54,11 +54,15 @@ namespace AoC18_core_v3.Controllers
         [HttpPost]
         public IActionResult Day3(String problem)
         {
+            DayXCode.Day3helpers.parseString(problem);
+            ViewData["problem"] = problem;
+
             return View();
         }
         public IActionResult Day3()
         {
-            return Day3(Day2Code.Day2.defaultproblem);
+            ViewData["problem"] = DayXCode.Day3.defaultproblem;
+            return View(); 
         }
 
         public IActionResult Day4()

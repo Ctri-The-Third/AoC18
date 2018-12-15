@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
+using AoC18_core_v3.DayXCode;
 
 namespace AoC18_core_v3.Controllers
 {
@@ -17,7 +17,7 @@ namespace AoC18_core_v3.Controllers
         public IActionResult Day1(string problem)
         {
             Day1Code.Day1.parse(problem);
-            
+
             ViewData["Problem"] = problem;
             ViewData["Final frequency"] = Day1Code.Day1.GetFinalFrequency();
             ViewData["Duplicate frequency"] = Day1Code.Day1.GetFirstMatcihngFrequency();
@@ -45,7 +45,7 @@ namespace AoC18_core_v3.Controllers
             ViewData["matchingChars"] = Day2Code.Day2.matchingcharacters;
             return View();
         }
-        
+
 
         public IActionResult Day2()
         {
@@ -54,11 +54,20 @@ namespace AoC18_core_v3.Controllers
         [HttpPost]
         public IActionResult Day3(String problem)
         {
+            ViewData["problem"] = problem;
+            Day3Fabric.parse(problem);
+            var coords = Day3Fabric.getCalculatedDims();
+            Day3Fabric.createFabric(coords.x, coords.y);
+
+            
+
+
             return View();
         }
         public IActionResult Day3()
         {
-            return Day3(Day2Code.Day2.defaultproblem);
+            ViewData["problem"] = DayXCode.Day3Claim.defaultproblem;
+            return View("Day3");
         }
 
         public IActionResult Day4()
@@ -85,6 +94,6 @@ namespace AoC18_core_v3.Controllers
         {
             return View("placeholder");
         }
-        
+
     }
 }

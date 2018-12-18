@@ -44,7 +44,46 @@ namespace AoC18_core_v3.DayXCode
             }
 
         }
+        public static void claimAll()
+        {
+            foreach (Day3Claim claim in claims)
+            {
+                claimSection(claim);
+            }
 
+        }
+        public static string getSolution()
+        {
+            string output = "";
+            int countclaimedspace = 0;
+            int countdoubleclaimedspace = 0;
+            int width = fabric.GetLength(0);
+            int height = fabric.GetLength(1);
+            double progress = 0;
+            for (int y = 0;  y < height; y++)
+            { 
+                for (int x= 0; x < width; x++)
+                {
+                    
+                    if (fabric[x, y] > 0)
+                    {
+                        countclaimedspace++;
+                        if (fabric[x, y] > 1)
+                            countdoubleclaimedspace++;
+                    }
+
+                    //output += fabric[x, y].ToString();
+                }
+                output += "\r\n";
+
+                progress = (( Convert.ToDouble(y)/ Convert.ToDouble(height)) * 100);
+                progress = Math.Round(progress, 2);
+                Console.WriteLine("Progress: " + progress+ "%");
+            }
+            output = "Total claimed squares = [" + countclaimedspace + "], double+ claimed squares = [" + countdoubleclaimedspace + "]";
+            return output;
+
+        }
         public static void claimSection(Day3Claim newclaim )
         {
             for (int y = newclaim.y; y < newclaim.y + newclaim.h; y++)

@@ -58,8 +58,10 @@ namespace AoC18_core_v3.Controllers
             Day3Fabric.parse(problem);
             var coords = Day3Fabric.getCalculatedDims();
             Day3Fabric.createFabric(coords.x, coords.y);
+            Day3Fabric.claimAll();
+            var solution =  Day3Fabric.getSolution();
+            ViewData["solution"] = solution;
 
-            
 
 
             return View();
@@ -67,6 +69,7 @@ namespace AoC18_core_v3.Controllers
         public IActionResult Day3()
         {
             ViewData["problem"] = DayXCode.Day3Claim.defaultproblem;
+            ViewData["solution"] = "";
             return View("Day3");
         }
 

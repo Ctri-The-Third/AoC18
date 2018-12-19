@@ -66,11 +66,12 @@ namespace AoC18_core_v3.DayXCode
             int width = fabric.GetLength(0);
             int height = fabric.GetLength(1);
             double progress = 0;
-            for (int y = 0;  y < height; y++)
-            { 
-                for (int x= 0; x < width; x++)
+            //part 1
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
                 {
-                    
+
                     if (fabric[x, y] > 0)
                     {
                         countclaimedspace++;
@@ -82,15 +83,33 @@ namespace AoC18_core_v3.DayXCode
                 }
                 //output += "\r\n";
 
-                progress = (( Convert.ToDouble(y)/ Convert.ToDouble(height)) * 100);
+                progress = ((Convert.ToDouble(y) / Convert.ToDouble(height)) * 100);
                 progress = Math.Round(progress, 2);
-                Console.WriteLine("Progress: " + progress+ "%");
+                Console.WriteLine("Progress: " + progress + "%");
             }
-            output = "Total claimed squares = [" + countclaimedspace + "], double+ claimed squares = [" + countdoubleclaimedspace + "]\r\n" + output;
+            output = "The following claim(s) do not overlap [";
+            foreach (var claim in claims)
+            {
+                bool valid = true;
+                for (int y = claim.y; y < claim.y+claim.h; y++)
+                for (int x = claim.x; x < claim.x+claim.w; x++)
+                    {
+                        if (fabric[x, y] > 1)
+                            valid = false;
+
+                    }
+
+
+                if (valid)
+                {
+                    output += claim.ID + ",";
+                }
+            }
+            output = " \r\n Total claimed squares = [" + countclaimedspace + "], double+ claimed squares = [" + countdoubleclaimedspace + "]\r\n" + output +"]";
             return output;
 
         }
-        public static void claimSection(Day3Claim newclaim )
+        public static void claimSection(Day3Claim newclaim)
         {
             for (int y = newclaim.y; y < newclaim.y + newclaim.h; y++)
                 for (int x = newclaim.x; x < newclaim.x + newclaim.w; x++)
@@ -101,25 +120,30 @@ namespace AoC18_core_v3.DayXCode
 
 
         }
-        public static void writeFabric (string filename)
+        public static void writeFabric(string filename)
         {
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"Day3Output.csv"))
+            try
             {
-                string line = "";
-                for (int y = 0; y < height; y++)
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"Day3Output.csv"))
                 {
-                    for (int x = 0; x < width; x++)
+                    string line = "";
+                    for (int y = 0; y < height; y++)
                     {
+                        for (int x = 0; x < width; x++)
+                        {
 
-                        line += fabric[x, y] + ",";
+                            line += fabric[x, y] + ",";
+                        }
+                        file.WriteLine(line);
+                        line = "";
+
                     }
-                    file.WriteLine (line);
-                    line = "";
 
+                    file.Close();
                 }
-
-                file.Close();
             }
+            catch (Exception e)
+            { }
         }
 
 

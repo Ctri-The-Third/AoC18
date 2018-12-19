@@ -55,11 +55,13 @@ namespace AoC18_core_v3.Controllers
         public IActionResult Day3(String problem)
         {
             ViewData["problem"] = problem;
+            Day3Fabric.reset();
             Day3Fabric.parse(problem);
             var coords = Day3Fabric.getCalculatedDims();
             Day3Fabric.createFabric(coords.x, coords.y);
             Day3Fabric.claimAll();
             var solution =  Day3Fabric.getSolution();
+            Day3Fabric.writeFabric("Day3Output.txt");
             ViewData["solution"] = solution;
 
 

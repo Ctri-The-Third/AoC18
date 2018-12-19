@@ -20,7 +20,13 @@ namespace AoC18_core_v3.DayXCode
         static List<Day3Claim> claims = new List<Day3Claim>();
         static int[,] fabric;
 
-
+        public static void reset()
+        {
+            claims = new List<Day3Claim>();
+            createFabric(0, 0);
+            width = 0;
+            height = 0;
+        }
         public static Day3Coord getCalculatedDims()
         {
             return new Day3Coord(width, height);
@@ -74,13 +80,13 @@ namespace AoC18_core_v3.DayXCode
 
                     //output += fabric[x, y].ToString();
                 }
-                output += "\r\n";
+                //output += "\r\n";
 
                 progress = (( Convert.ToDouble(y)/ Convert.ToDouble(height)) * 100);
                 progress = Math.Round(progress, 2);
                 Console.WriteLine("Progress: " + progress+ "%");
             }
-            output = "Total claimed squares = [" + countclaimedspace + "], double+ claimed squares = [" + countdoubleclaimedspace + "]";
+            output = "Total claimed squares = [" + countclaimedspace + "], double+ claimed squares = [" + countdoubleclaimedspace + "]\r\n" + output;
             return output;
 
         }
@@ -95,7 +101,26 @@ namespace AoC18_core_v3.DayXCode
 
 
         }
+        public static void writeFabric (string filename)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"Day3Output.csv"))
+            {
+                string line = "";
+                for (int y = 0; y < height; y++)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
 
+                        line += fabric[x, y] + ",";
+                    }
+                    file.WriteLine (line);
+                    line = "";
+
+                }
+
+                file.Close();
+            }
+        }
 
 
     }

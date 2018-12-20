@@ -77,7 +77,9 @@ namespace AoC18_core_v3.Controllers
 
         public IActionResult Day4()
         {
-            return View("placeholder");
+            ViewData["problem"] = "";
+            ViewData["Solution"] = "";
+            return View("Day4");
         }
         public IActionResult Day5()
         {

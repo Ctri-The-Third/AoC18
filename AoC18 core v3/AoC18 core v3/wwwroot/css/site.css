@@ -1,13 +1,24 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
+
+
+body.body
+{
+    padding-top: 20px;
     padding-bottom: 20px;
+    background-color: #000;
+    color: white;
 }
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
-.body-content {
+
+/*   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] 
+     flex: 0 1 auto;
+*/
+div.body-content {
+    background-color: #222;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -17,25 +28,73 @@ img.starimg
     height:32px;
 }
 .day-link, .day-link:hover, .day-link:visited, .day-link:link, .day-link:active{
-    color: #333;
+    color: #ddd;
     text-decoration: none;
     
 }
+.header {
+    background-color: #222;
+    order: 1;
+    color: white;
+}
 
+.footer
+{
+    background-color:#222;
+    
+    color:white;
+    order:7;
+}
+.daysContainer {
+    
+    order: 4;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    
+}
 
-    div.day-text{
+div.day-text{
         
-    }
-    div.day-box {
-        position: relative;
-        min-height: 150px;
-        padding-right: 15px;
-        padding-left: 15px;
-        
-        float: left;
-        color:#333;
-        width:225px;
-    }
+}
+
+ul.navbar /*header*/ {
+    font-size: 18px;
+    order: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height:40px;
+    
+    list-style:none;
+    
+    
+}
+.navbar-title
+{
+    font-size:18pt;
+    font-weight:bold;
+    flex:1 1 auto;
+}
+.navbar-item /*link*/
+{
+    font-size:14pt;
+    
+    width:100px;
+    flex:1 1 auto;
+    
+    padding-left:10px;
+    padding-right:10px;
+}
+
+div.day-box {
+    flex:1 0 auto;
+    height: 150px;
+    color: #fee;
+    width: 225px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
 
 /* Carousel */
 .carousel-caption p {

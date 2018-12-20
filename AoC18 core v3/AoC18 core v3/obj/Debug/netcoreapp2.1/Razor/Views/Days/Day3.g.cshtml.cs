@@ -75,7 +75,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</h2>\r\n<div style=\"width:100%;\">\r\n    ");
             EndContext();
             BeginContext(106, 475, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4308af037ee94edb9b4f1983d177621b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e35e26bd9824a86b2c9b673955620aa", async() => {
                 BeginContext(126, 171, true);
                 WriteLiteral("\r\n        \r\n        \r\n        <div style=\"width:50%; top:20px;border:2px solid black; float:left;\" id=\"problem\">\r\n            <textarea name=\"problem\" rows=\"20\" cols=\"50\">");
                 EndContext();

@@ -21,6 +21,7 @@ div.body-content {
     background-color: #222;
     padding-left: 15px;
     padding-right: 15px;
+    border-radius:25px;
 }
 img.starimg
 {

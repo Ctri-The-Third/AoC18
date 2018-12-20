@@ -74,16 +74,29 @@ namespace AoC18_core_v3.Controllers
             ViewData["solution"] = "";
             return View("Day3");
         }
-
+        [HttpPost]
+        public IActionResult Day4(string problem)
+        {
+            ViewData["Title"] = "Day 4";
+            ViewData["problem"] = problem;
+            ViewData["Solution"] = "";
+            return View("DayX");
+        }
         public IActionResult Day4()
         {
+            ViewData["Title"] = "Day 4";
+            ViewData["ControllerTarget"] = "Day4";
             ViewData["problem"] = "";
             ViewData["Solution"] = "";
-            return View("Day4");
+            return View("DayX");
         }
         public IActionResult Day5()
         {
-            return View("placeholder");
+            ViewData["Title"] = "Day 5";
+            ViewData["ControllerTarget"] = "Day5";
+            ViewData["problem"] = "";
+            ViewData["Solution"] = "";
+            return View("DayX");
         }
         public IActionResult Day6()
         {

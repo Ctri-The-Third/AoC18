@@ -27,10 +27,14 @@ img.starimg
     width:32px;
     height:32px;
 }
-.day-link, .day-link:hover, .day-link:visited, .day-link:link, .day-link:active{
+.navbar-link, .navbar-link:hover, .navbar-link:visited, .navbar-link:link, .navbar-link:active
+{
+    color:inherit;
+    text-decoration:none;
+}
+.day-link, .day-link:hover, .day-link:visited, .day-link:link, .day-link:active {
     color: #ddd;
     text-decoration: none;
-    
 }
 .header {
     background-color: #222;
@@ -57,17 +61,21 @@ img.starimg
 div.day-text{
         
 }
+textarea 
+{
+    background-color:#222;
+    max-height:500px;
+    overflow:scroll;
 
+}
 ul.navbar /*header*/ {
     font-size: 18px;
     order: 0;
     display: flex;
     flex-wrap: wrap;
-    height:40px;
-    
-    list-style:none;
-    
-    
+    height: 40px;
+    list-style: none;
+    align-items: flex-start;
 }
 .navbar-title
 {

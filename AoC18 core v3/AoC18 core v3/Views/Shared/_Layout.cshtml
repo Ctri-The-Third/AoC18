@@ -16,9 +16,9 @@
         <header>
             <ul class="navbar">
                 <li class="navbar-title">Advent of Code 2018</li>
-                <li class="navbar-item">Days</li>
-                <li class="navbar-item">About AoC</li>
-                <li class="navbar-item">Contact</li>
+                <li class="navbar-item"> <a asp-area="" asp-controller="Days" asp-action="index" class="navbar-link">Days</a></li>
+                <li class="navbar-item"> <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-link">About AoC</a></li>
+                <li class="navbar-item"><a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-link">Contact</a></li>
             </ul>
 
         </header>
@@ -26,7 +26,7 @@
         @RenderBody()
         <hr />
         <footer class="footer ">
-            <p>&copy; 2018 - Peter C'tri Goudie</p>
+            <p>Solutions and site - &copy; 2018 - Peter C'tri Goudie</p>
         </footer>
     </div>
 

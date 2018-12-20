@@ -35,3 +35,4 @@ C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debu
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.csproj.CopyComplete
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\Day3.g.cshtml.cs
 C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\placeholder.g.cshtml.cs
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\DayX.g.cshtml.cs

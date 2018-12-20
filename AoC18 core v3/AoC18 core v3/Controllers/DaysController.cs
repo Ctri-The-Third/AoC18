@@ -79,14 +79,15 @@ namespace AoC18_core_v3.Controllers
         {
             ViewData["Title"] = "Day 4";
             ViewData["problem"] = problem;
-            ViewData["Solution"] = "";
+            ViewData["Solution"] = DayXCode.Day4.parse(problem);
+            
             return View("DayX");
         }
         public IActionResult Day4()
         {
             ViewData["Title"] = "Day 4";
             ViewData["ControllerTarget"] = "Day4";
-            ViewData["problem"] = "";
+            ViewData["problem"] = DayXCode.Day4.DefaultProblem;
             ViewData["Solution"] = "";
             return View("DayX");
         }

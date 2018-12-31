@@ -79,8 +79,9 @@ namespace AoC18_core_v3.Controllers
         {
             ViewData["Title"] = "Day 4";
             ViewData["problem"] = problem;
-            ViewData["Solution"] = DayXCode.Day4.parse(problem);
-            
+            DayXCode.Day4.parse(problem);
+            ViewData["Solution"] =  DayXCode.Day4.solvePart1();
+            ViewData["Solution"] += DayXCode.Day4.solvePart2();
             return View("DayX");
         }
         public IActionResult Day4()

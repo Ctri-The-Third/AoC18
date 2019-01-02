@@ -4,14 +4,56 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AoC18_core_v3.DayXCode;
+using AoC18_core_v3.Models;
 
 namespace AoC18_core_v3.Controllers
 {
     public class DaysController : Controller
     {
+       
+        public static DayModel getModel(int daynumber)
+        {
+            return getModel().allDays[daynumber];
+        }
+        public static AllDaysModel getModel()
+        {
+            AllDaysModel allDays = new AllDaysModel();
+            allDays.allDays = new List<DayModel>();
+
+            allDays.allDays.Add(new DayModel(1, 2, "Chronal Calibration"));
+            allDays.allDays.Add(new DayModel(2, 2, "Inventory Management System"));
+            allDays.allDays.Add(new DayModel(3, 2, "No Matter How You Slice It"));
+            allDays.allDays.Add(new DayModel(4, 2, "Repose Record"));
+            allDays.allDays.Add(new DayModel(5, 0, "Alchemical Reduction"));
+            allDays.allDays.Add(new DayModel(6, 0, "Chronal Coordinates"));
+            allDays.allDays.Add(new DayModel(7, 0, "The Sum of Its Parts"));
+            allDays.allDays.Add(new DayModel(8, 0, "Memory Maneuver"));
+            allDays.allDays.Add(new DayModel(9, 0, "Marble Mania"));
+            allDays.allDays.Add(new DayModel(10, 0, "The Stars Align"));
+            allDays.allDays.Add(new DayModel(11, 0, "Chronal Charge"));
+            allDays.allDays.Add(new DayModel(12, 0, "Subterranean Sustainability"));
+            allDays.allDays.Add(new DayModel(13, 0, "Mine Cart Madness"));
+            allDays.allDays.Add(new DayModel(14, 0, "Chocolate Charts"));
+            allDays.allDays.Add(new DayModel(15, 0, "Beverage Bandits"));
+            allDays.allDays.Add(new DayModel(16, 0, "Chronal Classification"));
+            allDays.allDays.Add(new DayModel(17, 0, "Reservoir Research"));
+            allDays.allDays.Add(new DayModel(18, 0, "Settlers of The North Pole"));
+            allDays.allDays.Add(new DayModel(19, 0, "Go With The Flow"));
+            allDays.allDays.Add(new DayModel(20, 0, "A Regular Map"));
+            allDays.allDays.Add(new DayModel(21, 0, "Chronal Conversion"));
+            allDays.allDays.Add(new DayModel(22, 0, "Mode Maze"));
+            allDays.allDays.Add(new DayModel(23, 0, "Experimental Emergency Teleportation"));
+            allDays.allDays.Add(new DayModel(24, 0, "Immune System Simulator 20XX"));
+            allDays.allDays.Add(new DayModel(25, 0, "Four-Dimensional Adventure"));
+
+            return allDays;
+        }
+
         public IActionResult Index()
         {
-            return View();
+           
+
+            return View(getModel());
         }
         [HttpPost]
         public IActionResult Day1(string problem)
@@ -22,7 +64,7 @@ namespace AoC18_core_v3.Controllers
             ViewData["Final frequency"] = Day1Code.Day1.GetFinalFrequency();
             ViewData["Duplicate frequency"] = Day1Code.Day1.GetFirstMatcihngFrequency();
 
-            return View();
+            return View(getModel(0));
         }
         public IActionResult Day1()
         {
@@ -32,6 +74,7 @@ namespace AoC18_core_v3.Controllers
             ViewData["Final frequency"] = "Not yet calculated";
             ViewData["Duplicate frequency"] = "Not yet calculated";
             return View();
+
         }
 
         [HttpPost]
@@ -82,7 +125,7 @@ namespace AoC18_core_v3.Controllers
             DayXCode.Day4.parse(problem);
             ViewData["Solution"] =  DayXCode.Day4.solvePart1();
             ViewData["Solution"] += DayXCode.Day4.solvePart2();
-            return View("DayX");
+            return View("DayX", getModel(3));
         }
         public IActionResult Day4()
         {
@@ -90,7 +133,7 @@ namespace AoC18_core_v3.Controllers
             ViewData["ControllerTarget"] = "Day4";
             ViewData["problem"] = DayXCode.Day4.DefaultProblem;
             ViewData["Solution"] = "";
-            return View("DayX");
+            return View("DayX", getModel(3));
         }
         public IActionResult Day5()
         {
@@ -98,23 +141,23 @@ namespace AoC18_core_v3.Controllers
             ViewData["ControllerTarget"] = "Day5";
             ViewData["problem"] = "";
             ViewData["Solution"] = "";
-            return View("DayX");
+            return View("DayX", getModel(4));
         }
         public IActionResult Day6()
         {
-            return View("placeholder");
+            return View("placeholder", getModel(5));
         }
         public IActionResult Day7()
         {
-            return View("placeholder");
+            return View("placeholder", getModel(6));
         }
         public IActionResult Day8()
         {
-            return View("placeholder");
+            return View("placeholder", getModel(7));
         }
         public IActionResult Day9()
         {
-            return View("placeholder");
+            return View("placeholder", getModel(8));
         }
 
     }

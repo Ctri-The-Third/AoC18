@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AoC18_core_v3.DayXCode
+namespace AoC18.DayXCode
 {
     public class Day4
     {

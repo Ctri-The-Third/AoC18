@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AoC18_core_v3.DayXCode;
-using AoC18_core_v3.Models;
+using AoC18.DayXCode;
+using AoC18.Models;
 
-namespace AoC18_core_v3.Controllers
+namespace AoC18.Controllers
 {
     public class DaysController : Controller
     {
@@ -137,9 +137,7 @@ namespace AoC18_core_v3.Controllers
         }
         public IActionResult Day5()
         {
-            ViewData["Title"] = "Day 5";
-            ViewData["ControllerTarget"] = "Day5";
-            ViewData["problem"] = "";
+            ViewData["problem"] = DayXCode.Day5;
             ViewData["Solution"] = "";
             return View("DayX", getModel(4));
         }

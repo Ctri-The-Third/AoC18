@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AoC18_core_v3.Models;
+using AoC18.Models;
 
-namespace AoC18_core_v3.Controllers
+namespace AoC18.Controllers
 {
     public class HomeController : Controller
     {

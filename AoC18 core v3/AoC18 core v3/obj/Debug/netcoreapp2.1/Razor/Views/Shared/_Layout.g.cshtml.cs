@@ -67,7 +67,7 @@ using AoC18_core_v3.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(35, 553, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e7bb46254cc41cca13d83924e0becd6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eaea712d47a4451f81b5866598f7ef09", async() => {
                 BeginContext(41, 139, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\" />\r\n    <title>");
                 EndContext();
@@ -82,7 +82,7 @@ using AoC18_core_v3.Models;
                 WriteLiteral(" - Advent of Code 2018</title>\r\n\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">\r\n    ");
                 EndContext();
                 BeginContext(453, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5e926cc910e3415b891bc373b1e057a3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f00aca0e0c6444ad9c231d44f5abbbaa", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -101,7 +101,7 @@ using AoC18_core_v3.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(506, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "72d3bdca0e07461cb0698f5fb46518e3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "41851baeecdf40a38992c74d1a785e2d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -135,12 +135,12 @@ using AoC18_core_v3.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(590, 904, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df35c2736fb9498da74a9c2c12c7d2c0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb2d1430351b45369cefe1c5799acd5e", async() => {
                 BeginContext(609, 226, true);
                 WriteLiteral("\r\n\r\n    <div class=\"body-content container\" style=\"border:20px;\">\r\n        <header>\r\n            <ul class=\"navbar\">\r\n                <li class=\"navbar-title\">Advent of Code 2018</li>\r\n                <li class=\"navbar-item\"> ");
                 EndContext();
                 BeginContext(835, 84, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b1550aee00449a0bdb01d0ef7cda6d9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee9c000bad944c5da928afe99c55b906", async() => {
                     BeginContext(911, 4, true);
                     WriteLiteral("Days");
                     EndContext();
@@ -167,7 +167,7 @@ using AoC18_core_v3.Models;
                 WriteLiteral("</li>\r\n                <li class=\"navbar-item\"> ");
                 EndContext();
                 BeginContext(967, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d8039b43c2e49718fedaf068d313844", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "684029cfae814caab25f3fd4e6aeba8d", async() => {
                     BeginContext(1043, 9, true);
                     WriteLiteral("About AoC");
                     EndContext();
@@ -194,7 +194,7 @@ using AoC18_core_v3.Models;
                 WriteLiteral("</li>\r\n                <li class=\"navbar-item\">");
                 EndContext();
                 BeginContext(1103, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81c37b65ea55457d90ebed1da33151a8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27a0a17878574f03949ec98bcafbad23", async() => {
                     BeginContext(1181, 7, true);
                     WriteLiteral("Contact");
                     EndContext();

@@ -25,7 +25,7 @@ namespace AoC18.Controllers
             allDays.allDays.Add(new DayModel(3, 2, "No Matter How You Slice It"));
             allDays.allDays.Add(new DayModel(4, 2, "Repose Record"));
             allDays.allDays.Add(new DayModel(5, 2, "Alchemical Reduction"));
-            allDays.allDays.Add(new DayModel(6, 0, "Chronal Coordinates"));
+            allDays.allDays.Add(new DayModel(6, 1, "Chronal Coordinates"));
             allDays.allDays.Add(new DayModel(7, 0, "The Sum of Its Parts"));
             allDays.allDays.Add(new DayModel(8, 0, "Memory Maneuver"));
             allDays.allDays.Add(new DayModel(9, 0, "Marble Mania"));
@@ -51,16 +51,12 @@ namespace AoC18.Controllers
 
         public IActionResult Index()
         {
-           
-
             return View(getModel());
         }
         [HttpPost]
         public IActionResult Day1(string problem)
         {
             Day1Code.Day1.parse(problem);
-
-
 
             ViewData["problem"] = problem;
             ViewData["Solution"] = "Final frequency: " + Day1Code.Day1.GetFinalFrequency();
@@ -88,8 +84,6 @@ namespace AoC18.Controllers
             ViewData["matchingChars"] = Day2Code.Day2.matchingcharacters;
             return View();
         }
-
-
         public IActionResult Day2()
         {
             return Day2(Day2Code.Day2.defaultproblem);
@@ -147,15 +141,26 @@ namespace AoC18.Controllers
         {
             Day5 day5 = new Day5();
             ViewData["problem"] = problem;
-            //ViewData["Solution"] = day5.solvePart1();
-            //ViewData["Solution"] = day5.solvePart2();
             ViewData["Solution"] = day5.solvePart1() + "<br/>" +  day5.solvePart2();
             return View("DayX", getModel(4));
             
         }
+
+        [HttpPost]
+        public IActionResult Day6(string problem)
+        {
+            Day6 day6 = new Day6();
+            day6.Parse(problem);
+            ViewData["Problem"] = problem;
+            ViewData["Solution"] = day6.solvePart1() + "<br/>" + day6.solvePart2();
+            return View("DayX", getModel(5));
+        }
         public IActionResult Day6()
         {
-            return View("placeholder", getModel(5));
+            Day6 day6 = new Day6();
+            ViewData["Problem"] = day6.getDefaultProblem();
+            ViewData["Solution"] = "";
+            return View("DayX", getModel(5));
         }
         public IActionResult Day7()
         {

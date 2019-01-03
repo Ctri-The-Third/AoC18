@@ -14,17 +14,17 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\C'tri\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\Views\_ViewImports.cshtml"
-using AoC18_core_v3;
+using AoC18;
 
 #line default
 #line hidden
 #line 2 "C:\Users\C'tri\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\Views\_ViewImports.cshtml"
-using AoC18_core_v3.Models;
+using AoC18.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"289ed147e52e1d3ea295c70375d2228ceb5f10c5", @"/Views/Days/Day1.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a09d0fa47588c1ce0e470913e3e9f0ad0ee81ce", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"34203670868e967905f65771cdedff8698e047bc", @"/Views/_ViewImports.cshtml")]
     public class Views_Days_Day1 : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("action", new global::Microsoft.AspNetCore.Html.HtmlString("Day1\\"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -66,7 +66,7 @@ using AoC18_core_v3.Models;
             WriteLiteral("\r\n<h2>Day1</h2>\r\n<div style=\"width:100%;\">\r\n    ");
             EndContext();
             BeginContext(92, 566, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "923f9b53d1be4b8bb01a0c7ca98fdc8f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da0218db31a8469a9e95f130e2669d74", async() => {
                 BeginContext(127, 188, true);
                 WriteLiteral("\r\n        <input type =\"submit\" />\r\n        \r\n        <div style=\"width:50%; border:2px solid black; float:left;\" id=\"problem\">\r\n            <textarea name=\"problem\" rows=\"1000\" cols=\"50\">");
                 EndContext();

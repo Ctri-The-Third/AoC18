@@ -24,7 +24,7 @@ namespace AoC18.Controllers
             allDays.allDays.Add(new DayModel(2, 2, "Inventory Management System"));
             allDays.allDays.Add(new DayModel(3, 2, "No Matter How You Slice It"));
             allDays.allDays.Add(new DayModel(4, 2, "Repose Record"));
-            allDays.allDays.Add(new DayModel(5, 0, "Alchemical Reduction"));
+            allDays.allDays.Add(new DayModel(5, 1, "Alchemical Reduction"));
             allDays.allDays.Add(new DayModel(6, 0, "Chronal Coordinates"));
             allDays.allDays.Add(new DayModel(7, 0, "The Sum of Its Parts"));
             allDays.allDays.Add(new DayModel(8, 0, "Memory Maneuver"));
@@ -137,8 +137,17 @@ namespace AoC18.Controllers
         }
         public IActionResult Day5()
         {
-            ViewData["problem"] = DayXCode.Day5;
+            Day5 day5 = new Day5();
+            ViewData["problem"] = day5.getDefaultProblem();
             ViewData["Solution"] = "";
+            return View("DayX", getModel(4));
+        }
+        [HttpPost]
+        public IActionResult Day5(string problem)
+        {
+            Day5 day5 = new Day5();
+            ViewData["problem"] = problem;
+            ViewData["Solution"] = day5.solvePart1();
             return View("DayX", getModel(4));
         }
         public IActionResult Day6()

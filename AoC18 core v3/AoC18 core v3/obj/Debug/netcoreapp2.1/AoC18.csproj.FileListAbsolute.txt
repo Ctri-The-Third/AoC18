@@ -75,3 +75,4 @@ C:\Users\C'tri\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\bin\Debug\netc
 C:\Users\C'tri\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.Views.pdb
 C:\Users\C'tri\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\AoC18.csproj.CopyComplete
 C:\Users\C'tri\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\View.g.cshtml.cs
+C:\Users\petergoudie\Documents\GitHub\AoC18\AoC18 core v3\AoC18 core v3\obj\Debug\netcoreapp2.1\Razor\Views\Days\View.g.cshtml.cs

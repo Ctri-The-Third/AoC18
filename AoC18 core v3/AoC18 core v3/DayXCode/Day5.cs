@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace AoC18.DayXCode
 {
@@ -33,61 +34,26 @@ namespace AoC18.DayXCode
 
             
 
-            return "There are ["+ react(this.problem) + "] units in the solution";
+            return "There are ["+ react(this.problem).Length + "] units in the solution";
 
         }
 
-        public int react(string problem)
+        public string react(string problem)
         {
-            int targetLength = problem.Length;
-            string startProblem = "";
-            string endProblem = problem; //
             
-            while (startProblem != endProblem) 
-            { //parse the sentence until there are no changes
-                int restartindex = 0;
-                string lastletter = "";
-                string currentletter = "";
-                startProblem = endProblem; //all changes are made to endProblem. Before the variable is modified, a copy is taken for comparison.
-
-                bool complete = false; //status on this current parse
-                int i = restartindex; //local counter - this should start from the "last letter" index.
-                while (complete == false)  
-                {
-                    lastletter = currentletter;
-                    currentletter = endProblem.Substring(i, 1);
-
-                    if (currentletter == lastletter)
-                    { }
-                    else if (currentletter.ToUpper().Equals(lastletter.ToUpper()))
-                    {
-                        //DCEAbBacedD
-                        string firstpart = endProblem.Substring(0, i - 1);
-                        string secondpart = endProblem.Substring(i + 1);
-                        endProblem = firstpart + secondpart;
-                        restartindex = Math.Max(i - 2, 0);
-
-                        double d = (Convert.ToDouble(i) / Convert.ToDouble(endProblem.Length)) * 100;
-                        Console.WriteLine("Reacting: " + d + "%");
-
-                        complete = true; //stop and start again, to stop the indexing getting confused.
-                    }
-                    else
-                    { }
-                    // are they already the same? do nothing
-                    // do they become the same if UC/LC'd? remove the current character and last character from the string and continue.
-                    // else do nothing
-                   
-
-
-                    i++;
-
-
-                    if (i >= endProblem.Length) { complete = true; }  
-
-                }
-            }
-            return endProblem.Length;
+             
+            
+                
+            string regex = @"(aA|bB|cC|dD|eE|fF|gG|hH|iI|jJ|kK|lL|mM|nN|oO|pP|qQ|rR|sS|tT|uU|vV|wW|xX|yY|zZ|Aa|Bb|Cc|Dd|Ee|Ff|Gg|Hh|Ii|Jj|Kk|Ll|Mm|Nn|Oo|Pp|Qq|Rr|Ss|Tt|Uu|Vv|Ww|Xx|Yy|Zz)+";
+            string newproblem = Regex.Replace(problem, regex,"");
+            Console.WriteLine("Reacted " + (problem.Length - newproblem.Length));
+            if (newproblem == problem)
+            { return problem;  }
+            else
+            { return react(newproblem); }
+                
+                
+            
         }
 
 
@@ -109,7 +75,7 @@ namespace AoC18.DayXCode
                 trimmedproblem = problem.Replace(characters.Substring(c, 1), "");
                 trimmedproblem = trimmedproblem.Replace(characters.Substring(c, 1).ToUpper(), "");
                 Console.WriteLine(trimmedproblem.Length);
-                int currentProblemLength = react(trimmedproblem);
+                int currentProblemLength = react(trimmedproblem).Length;
                 if (currentProblemLength < maxLetterProblemLength)
                 {
                     

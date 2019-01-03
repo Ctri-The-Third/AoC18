@@ -1,24 +1,24 @@
 ﻿
 @{
-
+    @model AoC18.Models.DayModel;
 
 }
 
-<h2>@ViewData["Title"]</h2>
-<div style="width:100%;">
-    <form method="post">
-        
-
-        <div style="width:50%; top:20px;border:2px solid black; float:left;" id="problem">
-            <textarea name="problem" rows="20" cols="50">@ViewData["problem"].ToString()</textarea>
-
-        </div>
-        <div style=" width:50%;top:20px;border:2px solid black; float:left;" id="solution">
-            <input type="submit" style="height:20px;" />@Html.Raw(ViewData["solution"].ToString())</br/>
+<h2>Day @Model.DayNumber - @Model.title</h2>
+<form method="post">
+    <div class="dayDisplayContainer" style="width:100%;">
 
 
+
+        <div class="dayDisplay" id="problem" >
+            <textarea name="problem" rows="14" style="width:100%;">@ViewData["problem"].ToString()</textarea>
 
         </div>
-    </form>
-</div>
+        <div class="dayDisplay" id="solution" >
+            <input type="submit" style="height:20px;" /><p>@Html.Raw(ViewData["solution"].ToString())</p>
+
+        </div>
+
+    </div>
+</form>
 

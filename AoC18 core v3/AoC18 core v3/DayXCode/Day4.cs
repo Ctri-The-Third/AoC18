@@ -167,11 +167,8 @@ namespace AoC18.DayXCode
                 }
             }
 
-                var outstring = "Guard ID[" + maxGuard.ID + "] was asleep like so: <br/>[";
-            foreach (int i in minutes)
-            {
-                outstring += "," + i;
-            }
+            var outstring = "Guard ID[" + maxGuard.ID + "] was asleep.";
+            
             outstring += "]<br/> optimal minute = ["+maxID+", " + maxminute + " times]<br/>";
             outstring += "Checksum = <b>[" + (maxID * maxGuard.ID) + "]</b>";
             return outstring;

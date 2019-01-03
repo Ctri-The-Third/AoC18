@@ -24,7 +24,7 @@ namespace AoC18.Controllers
             allDays.allDays.Add(new DayModel(2, 2, "Inventory Management System"));
             allDays.allDays.Add(new DayModel(3, 2, "No Matter How You Slice It"));
             allDays.allDays.Add(new DayModel(4, 2, "Repose Record"));
-            allDays.allDays.Add(new DayModel(5, 1, "Alchemical Reduction"));
+            allDays.allDays.Add(new DayModel(5, 2, "Alchemical Reduction"));
             allDays.allDays.Add(new DayModel(6, 0, "Chronal Coordinates"));
             allDays.allDays.Add(new DayModel(7, 0, "The Sum of Its Parts"));
             allDays.allDays.Add(new DayModel(8, 0, "Memory Maneuver"));
@@ -60,20 +60,20 @@ namespace AoC18.Controllers
         {
             Day1Code.Day1.parse(problem);
 
-            ViewData["Problem"] = problem;
-            ViewData["Final frequency"] = Day1Code.Day1.GetFinalFrequency();
-            ViewData["Duplicate frequency"] = Day1Code.Day1.GetFirstMatcihngFrequency();
 
-            return View(getModel(0));
+
+            ViewData["problem"] = problem;
+            ViewData["Solution"] = "Final frequency: " + Day1Code.Day1.GetFinalFrequency();
+            ViewData["Solution"] += "<br/>First duplicate frequency: " + Day1Code.Day1.GetFirstMatcihngFrequency();
+            return View("DayX",getModel(0));
         }
         public IActionResult Day1()
         {
             //Day1Code.Day1.parse(ViewData["Problem"]);
             var problem = Day1Code.Day1.defaultproblem;
             ViewData["Problem"] = problem;
-            ViewData["Final frequency"] = "Not yet calculated";
-            ViewData["Duplicate frequency"] = "Not yet calculated";
-            return View();
+            ViewData["Solution"] = "Final frequency: Not yet calculated<br/>First duplicate frequency: Not yet calculated";
+            return View("DayX", getModel(0));
 
         }
 
@@ -147,8 +147,11 @@ namespace AoC18.Controllers
         {
             Day5 day5 = new Day5();
             ViewData["problem"] = problem;
-            ViewData["Solution"] = day5.solvePart1();
+            //ViewData["Solution"] = day5.solvePart1();
+            //ViewData["Solution"] = day5.solvePart2();
+            ViewData["Solution"] = day5.solvePart1() + "<br/>" +  day5.solvePart2();
             return View("DayX", getModel(4));
+            
         }
         public IActionResult Day6()
         {

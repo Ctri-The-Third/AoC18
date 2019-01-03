@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AoC18_core_v3.Day2Code
+namespace AoC18.Day2Code
 {
     public class Day2
     {

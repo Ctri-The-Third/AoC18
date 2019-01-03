@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AoC18.DayXCode;
+using AoC18_core_v3.DayXCode;
 
-namespace AoC18.DayXCode
+namespace AoC18_core_v3.DayXCode
 {
 
     public static class Day3Fabric

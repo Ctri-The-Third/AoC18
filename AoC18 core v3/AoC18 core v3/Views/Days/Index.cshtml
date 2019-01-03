@@ -1,25 +1,78 @@
 ﻿@{
-
-    @model AoC18.Models.AllDaysModel;
-
     ViewData["Title"] = "Days Page";
-
-
-
 }
 
 
 
 <div class="daysContainer">
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day1" class="day-link">
+            <h2>Day 1 - <img src="~/images/2b50.png" class="starimg" /><img src="~/images/2b50.png" class="starimg" /></h2>
 
-    @foreach (DayModel day in Model.allDays)
-    {
-        <div class="day-box">
-            <a asp-area="" asp-controller="Days" asp-action="@day.action" class="day-link">
-                <h2>Day @day.DayNumber - <img src="@day.firstStarPath"class="starimg" /><img src="@day.secondStarPath" class="starimg" /></h2>
+            Chronal Calibration
+        </a>
+    </div>
 
-                @day.title
-            </a>
-        </div>
-     }
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day2" class="day-link">
+            <h2>Day 2 - <img src="~/images/2b50.png" class="starimg" /><img src="~/images/2b50.png" class="starimg" /></h2>
+
+            Inventory Management System
+        </a>
+    </div>
+
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day3" class="day-link">
+            <h2>Day 3 - <img src="~/images/2b50.png" class="starimg" /><img src="~/images/2b50.png" class="starimg" /></h2>
+
+            No Matter How You Slice It.
+        </a>
+    </div>
+
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day4" class="day-link">
+            <h2>Day 4 - <img src="~/images/2b50b.png" class="starimg" /><img src="~/images/2b50b.png" class="starimg" /></h2>
+
+            Repose Record.
+        </a>
+    </div>
+
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day5" class="day-link">
+            <h2>Day 5 - <img src="~/images/2b50b.png" class="starimg" /><img src="~/images/2b50b.png" class="starimg" /></h2>
+
+            Alchemical Reduction.
+        </a>
+    </div>
+
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day6" class="day-link">
+            <h2>Day 6 - <img src="~/images/2b50b.png" class="starimg" /><img src="~/images/2b50b.png" class="starimg" /></h2>
+
+            Chronal Coordinates.
+        </a>
+    </div>
+
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day7" class="day-link">
+            <h2>Day 7 - <img src="~/images/2b50b.png" class="starimg" /><img src="~/images/2b50b.png" class="starimg" /></h2>
+
+            The Sum of Its Parts.
+        </a>
+    </div>
+
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day8" class="day-link">
+            <h2>Day 8 - <img src="~/images/2b50b.png" class="starimg" /><img src="~/images/2b50b.png" class="starimg" /></h2>
+
+            Memory Maneuver.
+        </a>
+    </div>
+    <div class="day-box">
+        <a asp-area="" asp-controller="Days" asp-action="day9" class="day-link">
+            <h2>Day 9 - <img src="~/images/2b50b.png" class="starimg" /><img src="~/images/2b50b.png" class="starimg" /></h2>
+
+            Marble Mania.
+        </a>
+    </div>
 </div>

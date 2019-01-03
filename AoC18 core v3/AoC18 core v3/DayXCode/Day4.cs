@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AoC18.DayXCode
+namespace AoC18_core_v3.DayXCode
 {
     public class Day4
     {
@@ -109,8 +109,7 @@ namespace AoC18.DayXCode
                     currentGuard.totalTimeAsleep += Convert.ToInt32((entry.timestamp - startsleep).TotalMinutes);
                     for (int i = startsleep.Minute; i < entry.timestamp.Minute; i++)
                     {
-                        currentDay.minutesAwake[i] = false;
-                        currentGuard.timeasleepperminute[i]++;
+                        currentDay.minutesAwake[i] = false; 
                     }
 
                 }
@@ -167,8 +166,11 @@ namespace AoC18.DayXCode
                 }
             }
 
-            var outstring = "Guard ID[" + maxGuard.ID + "] was asleep.";
-            
+                var outstring = "Guard ID[" + maxGuard.ID + "] was asleep like so: <br/>[";
+            foreach (int i in minutes)
+            {
+                outstring += "," + i;
+            }
             outstring += "]<br/> optimal minute = ["+maxID+", " + maxminute + " times]<br/>";
             outstring += "Checksum = <b>[" + (maxID * maxGuard.ID) + "]</b>";
             return outstring;
@@ -177,29 +179,9 @@ namespace AoC18.DayXCode
         {
             //there's going to be a [60XguardID] array.
             //find which guard has the highest individual count of minutes asleep.
-            //no that doesn't work. Each guard needs a 60 minute array and a count. 
-            //then we foreach through each guard and keep track of the max.
-            int maxminuteID = 0;
-            int maxguardID = 0;
-            int maxminutevalue = 0;
-            string outputstring = "";    
-            foreach (Day4Guard guard in guards.Values)
-            {
-                for (int i = 0; i < 60; i++)
-                {
-                    if (guard.timeasleepperminute[i] > maxminutevalue)
-                    {
-                        maxminuteID = i;
-                        maxguardID = guard.ID;
-                        maxminutevalue = guard.timeasleepperminute[i];
-                    }
-                }
-            }
-            outputstring += "<ul><li>Guard ID [" + maxguardID + "]</li>";
-            outputstring += "<li>minute ID [" + maxminuteID+ "]</li>";
-            outputstring += "<li>times guard was asleep [" + maxminutevalue+ "]</li>";
-            outputstring += "<li><b>Checksum [" + (maxminuteID * maxguardID)+ "]</b></li></ul>";
-            return outputstring;
+
+
+            return "";
         }
 
     }
@@ -266,7 +248,6 @@ namespace AoC18.DayXCode
             timeasleepperminute = new int[60];
             for (int i = 0; i<60; i++)
             {
-                timeasleepperminute[i] = 0;
                 i++;
             }
         }
@@ -280,7 +261,10 @@ namespace AoC18.DayXCode
         {
             awake = true;
         }
-
+        public void incrementMinute (int minuteId)
+        {
+            
+        }
         //ID
         //total minutes asleep
     }
@@ -297,7 +281,6 @@ namespace AoC18.DayXCode
 
             for (int i = 0; i < 60; i++)
             {
-                
                 minutesAwake[i]= true;
             }
         }

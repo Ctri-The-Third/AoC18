@@ -1,6 +1,6 @@
 using System;
 
-namespace AoC18.Models
+namespace AoC18_core_v3.Models
 {
     public class ErrorViewModel
     {

@@ -59,34 +59,6 @@ img.starimg
     
 }
 
-div.day-box {
-    flex: 1 0 auto;
-    height: 150px;
-    color: #fee;
-    width: 225px;
-    padding-right: 15px;
-    padding-left: 15px;
-    
-}
-
-.dayDisplayContainer {
-    order: 4;
-    display:flex;
-   
-    flex-wrap:wrap;
-    
-}
-
-.dayDisplay {
-    flex: 1 0 auto;
-    height: 300px;
-    padding: 5px;
-    border-left: 5px solid white;
-    border-right: 5px solid white;
-    color: #009900;
-}
-
-
 div.day-text{
         
 }
@@ -123,7 +95,15 @@ ul.navbar /*header*/ {
     padding-right:10px;
 }
 
+div.day-box {
+    flex:1 0 auto;
+    height: 150px;
+    color: #fee;
+    width: 225px;
+    padding-right: 15px;
+    padding-left: 15px;
 
+}
 
 /* Carousel */
 .carousel-caption p {
@@ -148,23 +128,3 @@ ul.navbar /*header*/ {
         display: none;
     }
 }
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-

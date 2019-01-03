@@ -123,6 +123,11 @@ namespace AoC18.DayXCode
 
         public string solvePart2()
         {
+
+            //loop through the grid, and calculate against all locations
+            //for each grid location, calculate to the total distance to all coordinates
+            //if the total is less than 10000, it's valid, increment the output by 1.
+
             return "solved part 2";
         }
 

@@ -118,17 +118,37 @@ namespace AoC18.DayXCode
             }
             
             writeGrid();
-            return "<li> The area of the largest non-infinite space is "+maxval+", and it is coordinate ID "+ maxid;
+            return "<li> The area of the largest non-infinite space is "+maxval+", and it is coordinate ID "+ maxid + "</li>";
         }
 
         public string solvePart2()
         {
-
+            int output = 0;
+            int counter = 0;
+            for (int y = 0; y < grid.GetLength(1); y++) //y
+            {
+                for (int x = 0; x < grid.GetLength(0); x++)
+                {
+                    
+                    int totaldistance = 0;
+                    foreach (Day6Coord coord in coords.Values)
+                    {
+                        //distance * distance = (y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1)
+                        totaldistance += Math.Abs(x - coord.x) + Math.Abs(y - coord.y);
+                        
+                    }
+                    
+                    if (totaldistance < 10000)
+                    {
+                        output++;
+                    }
+                }
+            }
+            return "<li> There are [" + output + "] locations where all coordinates are within 10000 distance</li><li>the grid comprises of [" + counter + "] squares</li>";
             //loop through the grid, and calculate against all locations
             //for each grid location, calculate to the total distance to all coordinates
             //if the total is less than 10000, it's valid, increment the output by 1.
 
-            return "solved part 2";
         }
 
         public void infinityCheck()
@@ -170,7 +190,10 @@ namespace AoC18.DayXCode
                     {
                         for (int x = 0; x < grid.GetLength(0); x++)
                         {
-
+                            if (grid[x,y] < 10 && grid[x,y] > -1)
+                            {
+                                line += "0";
+                            }
                             line += grid[x, y] + ",";
                         }
                         file.WriteLine(line);

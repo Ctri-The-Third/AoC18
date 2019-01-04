@@ -25,7 +25,7 @@ namespace AoC18.Controllers
             allDays.allDays.Add(new DayModel(3, 2, "No Matter How You Slice It"));
             allDays.allDays.Add(new DayModel(4, 2, "Repose Record"));
             allDays.allDays.Add(new DayModel(5, 2, "Alchemical Reduction"));
-            allDays.allDays.Add(new DayModel(6, 1, "Chronal Coordinates"));
+            allDays.allDays.Add(new DayModel(6, 2, "Chronal Coordinates"));
             allDays.allDays.Add(new DayModel(7, 0, "The Sum of Its Parts"));
             allDays.allDays.Add(new DayModel(8, 0, "Memory Maneuver"));
             allDays.allDays.Add(new DayModel(9, 0, "Marble Mania"));
@@ -152,7 +152,7 @@ namespace AoC18.Controllers
             Day6 day6 = new Day6();
             day6.Parse(problem);
             ViewData["Problem"] = problem;
-            ViewData["Solution"] = day6.solvePart1() + "<br/>" + day6.solvePart2();
+            ViewData["Solution"] = "<ul>"+day6.solvePart1() +  day6.solvePart2()+"</ul>";
             return View("DayX", getModel(5));
         }
         public IActionResult Day6()

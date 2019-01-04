@@ -1,6 +1,17 @@
 ﻿
 @{
     @model AoC18.Models.DayModel;
+    if (ViewData["problem"] is null)
+    {
+        ViewData["problem"] = "The problem has not been defined. \n\r" +
+                    "That usually means that this day's problem is still in the very early stages";
+    }
+    if (ViewData["solution"] is null)
+    {
+        ViewData["solution"] = "";
+
+    }
+
 
 }
 

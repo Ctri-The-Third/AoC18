@@ -162,9 +162,22 @@ namespace AoC18.Controllers
             ViewData["Solution"] = "";
             return View("DayX", getModel(5));
         }
+
+        [HttpPost]
+        public IActionResult Day7(string problem)
+        {
+            Day7 day7 = new Day7();
+
+            ViewData["problem"] = problem;
+            ViewData["solution"] = "<ul>" + day7.solvePart1() + day7.solvePart2() + "</ul>";
+            return View("DayX", getModel(6));
+        }
         public IActionResult Day7()
         {
-            return View("placeholder", getModel(6));
+            Day7 day7 = new Day7();
+            ViewData["problem"] = day7.getDefaultProblem();
+            ViewData["solution"] = "<ul>" + "" + "</ul>";
+            return View("DayX", getModel(6));
         }
         public IActionResult Day8()
         {

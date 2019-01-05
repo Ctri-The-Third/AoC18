@@ -7,6 +7,11 @@ namespace AoC18.DayXCode
 {
     public class Day7 : Day
     {
+        /*
+         * partly due to my failure to read properly, the initial solution for this fully evaluated steps that became possible as soon as they became possible
+         * however the instructions say if there's more than 1 available step (including ones that were previously available), then the first alphabetically should be completed
+         * so to resolve this, instead of using an exhaustive recursive loop, a "queue" list was shoehorned in instead. Inelligent.
+         */
         public Dictionary<string , Day7Step> allsteps; //master list. All actions performed should involve reference passing.
 
         public string getDefaultProblem()
@@ -56,17 +61,25 @@ namespace AoC18.DayXCode
             //if length of solution is equal to count of steps, complete.
 
             List<Day7Step> answers = new List<Day7Step>();
+            List<Day7Step> queue = new List<Day7Step>();
             var allstepsSorted = allsteps.Values.ToList();
             allstepsSorted.Sort();
-            foreach (var step in allsteps.Values)
+            foreach (var step in allstepsSorted)
             {
                 //find the sourceIDs - those that are not blocked. then arrange then alphabetically, then process them.    
                 if (step.getSortedBlockedBy().Count == 0)
                 {
-                    Console.WriteLine(" > Starting a new root note [" + step.id);
-                    completeAStep(answers, step);
+                    Console.WriteLine(" > Queuing a new root note [" + step.id);
+                    queue.Add(step);
                 }
 
+            }
+            
+            queue.Sort();
+            while( queue.Count > 0)
+            {
+                queue.Sort();
+                completeAStep(answers, queue.First(), ref queue);
             }
             string output = "";
             foreach (var answer in answers)
@@ -76,8 +89,11 @@ namespace AoC18.DayXCode
             return "<li>The assembly order for the parts is: ["+output+"]</li>";
         }
 
-        public List<Day7Step> completeAStep(List<Day7Step> answers, Day7Step step)
+        public List<Day7Step> completeAStep(List<Day7Step> answers, Day7Step step, ref List<Day7Step> queue )
         {
+            
+
+
             //this is a step we are trying to solve. 
             // step 1, check all "is blocked by". 
             // if answers contains every "blocker", add this to answers - it is now solved.
@@ -90,11 +106,8 @@ namespace AoC18.DayXCode
                 dbganswerprogress += dbgstep.id;
                 
             }
-            if (dbganswerprogress == "FLRXEQUHPSBKNGIJVTZ")
-            {
 
-            }
-            String dbgstatus = step.id + ": We're looking at " + step.id + " which blocks [";
+            String dbgstatus = step.id + ": first we're looking at " + step.id + ",  which blocks [";
             foreach(var dbg in step.getSortedBlocks())
             {  dbgstatus += dbg.id + ", "; }
             dbgstatus = dbgstatus.Substring(0, dbgstatus.Length - 2) + "] and is blocked by [";
@@ -102,9 +115,23 @@ namespace AoC18.DayXCode
             { dbgstatus += dbg.id + ", "; }
             dbgstatus = dbgstatus.Substring(0, dbgstatus.Length - 2) + "].";
             Console.WriteLine(dbgstatus);
+            dbgstatus = step.id + ": queue status is [";
+            foreach ( var dbg in queue)
+            {
+                dbgstatus += dbg.id;
+            }
+            dbgstatus += "]";
+            Console.WriteLine(dbgstatus);
             string dbg2 = "[";
             var blocked = false;
-            
+            if (dbganswerprogress == "BFLNGIRUSJXEHKQP" )
+            {  //at Z, going into A, and then D
+               //BFLNGIRUSJXEHKQPYVOTCZDWMA -- current
+               //BFLNGIRUSJXEHKQPVTYOCZDWMA -- correct
+               
+
+
+            }
             foreach (var blocker in step.getSortedBlockedBy())
             {
                 if (!answers.Contains(blocker))
@@ -122,31 +149,69 @@ namespace AoC18.DayXCode
                     Console.WriteLine(step.id + ": We have ALREADY completed step " + step.id + ", checking blocked steps");
                 }
                 else { 
-                answers.Add(step);
-
+                    answers.Add(step);
                     Console.WriteLine(step.id +": Completed step " + step.id + ", now looking at the steps it blocks");
                 }
-                
+
+
+
                 foreach ( Day7Step possiblyUnblocked in step.getSortedBlocks())
                 {
-                    Console.WriteLine(step.id + "> about to start looking at " + possiblyUnblocked.id);
-                    completeAStep(answers, possiblyUnblocked);
+                    Console.WriteLine(step.id + "> Queuing start looking at " + possiblyUnblocked.id);
+                    if (!queue.Contains(possiblyUnblocked))
+                        queue.Add(possiblyUnblocked);
                 }
+                
+                queue.Sort();
+                queue.Remove(step);
+                
             }
             else {
                 Console.WriteLine(step.id + ": Could not complete step " + step.id + ", because" + dbg2.Substring(0, dbg2.Length-2) + "] are not complete");
             }
 
             Console.WriteLine(step.id + "< finishing looking at " + step.id + ", going up a level.");
+            queue.Remove(step);//we don't need to reprocess this one 
             return answers;
         }
 
         public string solvePart2()
         {
-            return "<li>part 2 solution</li>";
+            //handled together with part 1
+            return "";
         }
     }
+    public class Day7Worker
+    {
+        public int id;
+        public Day7Step currentTask;
+        public int startTime;
+        public int finishTime;
 
+        public Day7Worker(int id)
+        {
+            this.id = id;
+            this.finishTime = 0;
+        }
+
+        public void assignJob(int startTime, Day7Step newTask)
+        {
+            this.startTime = startTime;
+            this.currentTask = newTask;
+            foreach (char c in currentTask.id)
+            {
+                int duration = c;
+                finishTime = startTime + duration + 60;
+            }
+        }
+        public bool stillWorking(int currentTime)
+        {
+            if (currentTime >= finishTime)
+                return true;
+            return false;
+        }
+            
+    }
     public class Day7Step : IComparable<Day7Step>
     {
         public Dictionary<string, Day7Step> blocks; //things that this blocks, and that rely on this
@@ -173,6 +238,11 @@ namespace AoC18.DayXCode
 
         public List<Day7Step> getSortedBlocks()
         {
+            if (this.id=="P")
+            {
+                //WADY, Y should not be completable yet.
+                
+            }
             var returnvalue = blocks.Values.ToList<Day7Step>();
             returnvalue.Sort();
             return returnvalue;

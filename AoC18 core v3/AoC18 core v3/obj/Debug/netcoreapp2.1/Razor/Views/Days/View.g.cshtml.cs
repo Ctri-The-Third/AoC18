@@ -54,7 +54,7 @@ using AoC18.Models;
             WriteLiteral("\r\n<p>\r\n    ");
             EndContext();
             BeginContext(55, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a680c61fae8d427089c7502fc7e51210", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a27be741fe44d6fa8717317bf8f0c30", async() => {
                 BeginContext(78, 10, true);
                 WriteLiteral("Create New");
                 EndContext();

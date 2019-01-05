@@ -74,7 +74,7 @@ using AoC18.Models;
             WriteLiteral("        <div class=\"day-box\">\r\n            ");
             EndContext();
             BeginContext(227, 271, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e6954bf297443bc81dee74ed6b7584f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6841941ad8c4599b215bd52a40aadfd", async() => {
                 BeginContext(306, 26, true);
                 WriteLiteral("\r\n                <h2>Day ");
                 EndContext();

@@ -43,6 +43,8 @@ namespace AoC18.DayXCode
 
                 }
             }
+            
+            
         }
 
         public string solvePart1()
@@ -54,11 +56,14 @@ namespace AoC18.DayXCode
             //if length of solution is equal to count of steps, complete.
 
             List<Day7Step> answers = new List<Day7Step>();
+            var allstepsSorted = allsteps.Values.ToList();
+            allstepsSorted.Sort();
             foreach (var step in allsteps.Values)
             {
                 //find the sourceIDs - those that are not blocked. then arrange then alphabetically, then process them.    
-                if (step.blockedBy.Values.Count == 0)
+                if (step.getSortedBlockedBy().Count == 0)
                 {
+                    Console.WriteLine(" > Starting a new root note [" + step.id);
                     completeAStep(answers, step);
                 }
 
@@ -79,24 +84,60 @@ namespace AoC18.DayXCode
             // then, foreach 'blocks', try and solve
 
             //currently we're getting repeated things. Worth maintaing a global answers string just for debugging?
+            string dbganswerprogress = "";
+            foreach(var dbgstep in answers)
+            {
+                dbganswerprogress += dbgstep.id;
+                
+            }
+            if (dbganswerprogress == "FLRXEQUHPSBKNGIJVTZ")
+            {
+
+            }
+            String dbgstatus = step.id + ": We're looking at " + step.id + " which blocks [";
+            foreach(var dbg in step.getSortedBlocks())
+            {  dbgstatus += dbg.id + ", "; }
+            dbgstatus = dbgstatus.Substring(0, dbgstatus.Length - 2) + "] and is blocked by [";
+            foreach (var dbg in step.getSortedBlockedBy())
+            { dbgstatus += dbg.id + ", "; }
+            dbgstatus = dbgstatus.Substring(0, dbgstatus.Length - 2) + "].";
+            Console.WriteLine(dbgstatus);
+            string dbg2 = "[";
             var blocked = false;
-            foreach (var blocker in step.blockedBy.Values)
+            
+            foreach (var blocker in step.getSortedBlockedBy())
             {
                 if (!answers.Contains(blocker))
                 {
                     blocked = true;
+                    dbg2 += blocker.id + ", ";
                 }
             }
+
             if (!blocked)
             {
-                answers.Add(step);
-                foreach( var possiblyUnblocked in step.blocks.Values)
+                //it's possible that we might find ourselves completing steps more than once.
+                if (answers.Contains(step))
                 {
+                    Console.WriteLine(step.id + ": We have ALREADY completed step " + step.id + ", checking blocked steps");
+                }
+                else { 
+                answers.Add(step);
+
+                    Console.WriteLine(step.id +": Completed step " + step.id + ", now looking at the steps it blocks");
+                }
+                
+                foreach ( Day7Step possiblyUnblocked in step.getSortedBlocks())
+                {
+                    Console.WriteLine(step.id + "> about to start looking at " + possiblyUnblocked.id);
                     completeAStep(answers, possiblyUnblocked);
                 }
             }
+            else {
+                Console.WriteLine(step.id + ": Could not complete step " + step.id + ", because" + dbg2.Substring(0, dbg2.Length-2) + "] are not complete");
+            }
 
-
+            Console.WriteLine(step.id + "< finishing looking at " + step.id + ", going up a level.");
             return answers;
         }
 
@@ -106,7 +147,7 @@ namespace AoC18.DayXCode
         }
     }
 
-    public class Day7Step
+    public class Day7Step : IComparable<Day7Step>
     {
         public Dictionary<string, Day7Step> blocks; //things that this blocks, and that rely on this
         public Dictionary<string, Day7Step> blockedBy; //prereqs before this can continue;
@@ -118,6 +159,31 @@ namespace AoC18.DayXCode
             this.blocks = new Dictionary<string, Day7Step>();
             this.blockedBy = new Dictionary<string, Day7Step>();
         }
+
+        public int CompareTo(Day7Step other)
+        {
+
+            return String.Compare(this.id, other.id);
+
+            //greater than = 1;
+            //less than = -1
+            //the same = 0
+            
+        }
+
+        public List<Day7Step> getSortedBlocks()
+        {
+            var returnvalue = blocks.Values.ToList<Day7Step>();
+            returnvalue.Sort();
+            return returnvalue;
+        }
+        public List<Day7Step> getSortedBlockedBy()
+        {
+            var returnvalue = blockedBy.Values.ToList<Day7Step>();
+            returnvalue.Sort();
+            return returnvalue;
+        }
+
 
         public void isBlockedBy(ref Day7Step blocker)
         {

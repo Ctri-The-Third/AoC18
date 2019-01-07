@@ -91,9 +91,6 @@ namespace AoC18.DayXCode
 
         public List<Day7Step> completeAStep(List<Day7Step> answers, Day7Step step, ref List<Day7Step> queue )
         {
-            
-
-
             //this is a step we are trying to solve. 
             // step 1, check all "is blocked by". 
             // if answers contains every "blocker", add this to answers - it is now solved.
@@ -177,39 +174,111 @@ namespace AoC18.DayXCode
 
         public string solvePart2()
         {
-            //handled together with part 1
+            List<Day7Step> answers = new List<Day7Step>();
+            List<Day7Step> queue = new List<Day7Step>();
+            List<Day7Worker> workers = new List<Day7Worker>();
+            for (int i = 0; i < 6; i++)
+            {
+                var worker = new Day7Worker(i);
+                workers.Add(worker);
+            }
+            var allstepsSorted = allsteps.Values.ToList();
+            allstepsSorted.Sort();
+            foreach (var step in allstepsSorted)
+            {
+                //find the sourceIDs - those that are not blocked. then arrange then alphabetically, then process them.    
+                if (step.getSortedBlockedBy().Count == 0)
+                {
+                    Console.WriteLine(" > Queuing a new root note [" + step.id + "]");
+                    queue.Add(step);
+                }
+
+            }
+            int seconds = 0;
+            while (answers.Count < 26)
+            {
+                Console.WriteLine ("---------- " + seconds + " ----------");
+                
+                //check all workers. If any are not working, add the first of the queue to them
+                //remove the step from the queue
+                //when the worker completes the step, call the "complete a step" method.
+                foreach(var worker in workers)
+                {
+                    if (worker.tryCompleteJob(seconds)) 
+                    {
+                        completeAStep(answers, worker.currentTask, ref queue);
+                    }
+                    if (worker.readyforwork == true && queue.Count > 0) //there might be no tasks ready to complete
+                    {
+                        worker.assignJob(seconds, queue.First());   //TODO the queue is to check, not to complete - we need to check to see if it's possible before we have a worker do it.
+                        queue.Remove(queue.First());
+                    }
+                    Console.WriteLine("[" + seconds + "] " + worker.dbgString(seconds));
+                }
+                queue.Sort();
+                seconds++;
+            }
+            
             return "";
         }
+
+        
     }
     public class Day7Worker
     {
+
+        //
         public int id;
         public Day7Step currentTask;
         public int startTime;
         public int finishTime;
+        public bool readyforwork;
 
         public Day7Worker(int id)
         {
             this.id = id;
-            this.finishTime = 0;
+            this.finishTime = -1;
+            this.readyforwork = true;
         }
 
         public void assignJob(int startTime, Day7Step newTask)
         {
+            this.readyforwork = false;
             this.startTime = startTime;
             this.currentTask = newTask;
+
             foreach (char c in currentTask.id)
             {
-                int duration = c;
-                finishTime = startTime + duration + 60;
+                int duration = c - 64;
+                finishTime = startTime + duration + 60; 
             }
         }
-        public bool stillWorking(int currentTime)
+        public bool tryCompleteJob( int currentTime)
         {
-            if (currentTime >= finishTime)
+            if (currentTime == finishTime)
+            {
+                this.readyforwork = true;
                 return true;
+            }
             return false;
         }
+      
+        public string dbgString (int currentTime)
+        {
+            string output = "";
+            if (finishTime < currentTime)
+            {//previously finished a job
+                output += this.id + ", no job";
+
+            }
+            else if (finishTime == currentTime)
+            { output += this.id + ", FINISHING " + this.currentTask.id; }
+            else if (finishTime > currentTime)
+            { output += this.id + ", WORKING" + (finishTime - currentTime) + " seconds until " + this.currentTask.id + ""; }
+
+            return output;
+        }
+            
             
     }
     public class Day7Step : IComparable<Day7Step>

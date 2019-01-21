@@ -174,6 +174,8 @@ namespace AoC18.DayXCode
 
         public string solvePart2()
         {
+            //current issue looks like jobs are not getting solved in sequence late in the game, because a step can be re-added to the queue from multiple blockers getting sorted at the same time.
+            //need validation to stop any job that's in progress from being added to the queue.
             List<Day7Step> answers = new List<Day7Step>();
             List<Day7Step> queue = new List<Day7Step>();
             List<Day7Worker> workers = new List<Day7Worker>();
@@ -187,7 +189,7 @@ namespace AoC18.DayXCode
             foreach (var step in allstepsSorted)
             {
                 //find the sourceIDs - those that are not blocked. then arrange then alphabetically, then process them.    
-                if (step.getSortedBlockedBy().Count == 0)
+                if (step.getSortedBlockedBy().Count == 0 && step.inprogress == false /*&&workers are not working on this step*/)
                 {
                     Console.WriteLine(" > Queuing a new root note [" + step.id + "]");
                     queue.Add(step);
@@ -210,7 +212,8 @@ namespace AoC18.DayXCode
                     }
                     if (worker.readyforwork == true && queue.Count > 0) //there might be no tasks ready to complete
                     {
-                        worker.assignJob(seconds, queue.First());   //TODO the queue is to check, not to complete - we need to check to see if it's possible before we have a worker do it.
+                        var nextjob = queue.First();
+                        worker.assignJob(seconds, ref nextjob);   //TODO the queue is to check, not to complete - we need to check to see if it's possible before we have a worker do it.
                         queue.Remove(queue.First());
                     }
                     Console.WriteLine("[" + seconds + "] " + worker.dbgString(seconds));
@@ -229,7 +232,7 @@ namespace AoC18.DayXCode
 
         //
         public int id;
-        public Day7Step currentTask;
+        public  Day7Step currentTask;
         public int startTime;
         public int finishTime;
         public bool readyforwork;
@@ -241,12 +244,12 @@ namespace AoC18.DayXCode
             this.readyforwork = true;
         }
 
-        public void assignJob(int startTime, Day7Step newTask)
+        public void assignJob(int startTime, ref Day7Step newTask)
         {
             this.readyforwork = false;
             this.startTime = startTime;
             this.currentTask = newTask;
-
+            newTask.inprogress = true;
             foreach (char c in currentTask.id)
             {
                 int duration = c - 64;
@@ -286,12 +289,14 @@ namespace AoC18.DayXCode
         public Dictionary<string, Day7Step> blocks; //things that this blocks, and that rely on this
         public Dictionary<string, Day7Step> blockedBy; //prereqs before this can continue;
         public string id;
+        public bool inprogress;
 
         public Day7Step(string id)
         {
             this.id = id;
             this.blocks = new Dictionary<string, Day7Step>();
             this.blockedBy = new Dictionary<string, Day7Step>();
+            this.inprogress = false;
         }
 
         public int CompareTo(Day7Step other)

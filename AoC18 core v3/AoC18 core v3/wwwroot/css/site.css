@@ -17,6 +17,13 @@ body.body
 /*   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] 
      flex: 0 1 auto;
 */
+div.announcement{
+    background-color:#ffcccc;
+    border:1px solid red;
+    color:red;
+    padding:10px;
+}
+
 div.body-content {
     background-color: #222;
     padding-left: 15px;

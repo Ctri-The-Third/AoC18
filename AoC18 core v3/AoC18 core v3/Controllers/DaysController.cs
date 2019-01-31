@@ -26,7 +26,7 @@ namespace AoC18.Controllers
             allDays.allDays.Add(new DayModel(4, 2, "Repose Record"));
             allDays.allDays.Add(new DayModel(5, 2, "Alchemical Reduction"));
             allDays.allDays.Add(new DayModel(6, 2, "Chronal Coordinates"));
-            allDays.allDays.Add(new DayModel(7, 0, "The Sum of Its Parts"));
+            allDays.allDays.Add(new DayModel(7, 1, "The Sum of Its Parts"));
             allDays.allDays.Add(new DayModel(8, 0, "Memory Maneuver"));
             allDays.allDays.Add(new DayModel(9, 0, "Marble Mania"));
             allDays.allDays.Add(new DayModel(10, 0, "The Stars Align"));
